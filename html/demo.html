@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Code Analyzer - Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .step {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .step:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: #4CAF50;
+    }
+    .step:last-child:before {
+      height: 50%;
+    }
+    .step-number {
+      position: absolute;
+      left: -12px;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .screenshot {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-bold text-green-600">
+        <i class="fas fa-leaf mr-2"></i>Green Code Analyzer - Demo
+      </h1>
+    </div>
+
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">How to Use the Extension</h2>
+      
+      <div class="space-y-8 mt-6">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Install the Extension</h3>
+          <p class="text-gray-700 mb-4">
+            After loading the extension into Chrome, you'll see the Green Code Analyzer icon in your toolbar.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of extension icon in Chrome toolbar]</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Click on the Extension Icon</h3>
+          <p class="text-gray-700 mb-4">
+            Click on the Green Code Analyzer icon to open the popup interface.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of popup interface]</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Paste Your Code</h3>
+          <p class="text-gray-700 mb-4">
+            Paste your code into the text area and select the programming language from the dropdown menu.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of code input and language selection]</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Analyze the Code</h3>
+          <p class="text-gray-700 mb-4">
+            Click the "Analyze Code" button to start the analysis. The extension will send the code to the Google Gemini API for processing.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of loading state]</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">5</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">View the Results</h3>
+          <p class="text-gray-700 mb-4">
+            Review the analysis results, including the efficiency score, carbon impact, and recommendations for improvement.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of analysis results]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Using the Context Menu</h2>
+      
+      <div class="space-y-8 mt-6">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Select Code on a Webpage</h3>
+          <p class="text-gray-700 mb-4">
+            Find code on any webpage (like GitHub, StackOverflow, etc.) and select it.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of selected code on a webpage]</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Right-Click and Select "Analyze Code for Energy Efficiency"</h3>
+          <p class="text-gray-700 mb-4">
+            Right-click on the selected code and choose the "Analyze Code for Energy Efficiency" option from the context menu.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of context menu]</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">View the Results</h3>
+          <p class="text-gray-700 mb-4">
+            The extension will open automatically and analyze the selected code.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of analysis results]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Configuring the Extension</h2>
+      
+      <div class="space-y-8 mt-6">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Access the Settings</h3>
+          <p class="text-gray-700 mb-4">
+            Click the settings icon in the popup or right-click the extension icon and select "Options".
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of settings icon]</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Configure Your Settings</h3>
+          <p class="text-gray-700 mb-4">
+            Enter your Google Gemini API key, set the default programming language, and enable/disable auto-analyze.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of settings page]</p>
+          </div>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">Save Your Settings</h3>
+          <p class="text-gray-700 mb-4">
+            Click the "Save Settings" button to apply your changes.
+          </p>
+          <div class="screenshot p-2 bg-gray-50">
+            <p class="text-gray-500 text-center italic">[Screenshot of save button]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="sample-code.html" class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors">
+        <i class="fas fa-code mr-2"></i>View Sample Code
+      </a>
+    </div>
+  </div>
+</body>
+</html>

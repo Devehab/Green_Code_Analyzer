@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Code Analyzer - Sample Code</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="sample-code.js"></script>
+  <style>
+    pre {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-bold text-green-600">
+        <i class="fas fa-leaf mr-2"></i>Green Code Analyzer - Sample Code
+      </h1>
+    </div>
+
+    <p class="mb-6 text-gray-700">
+      Below are some sample code snippets you can use to test the Green Code Analyzer extension. 
+      Simply copy one of these examples and paste it into the extension's code input field.
+    </p>
+
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">JavaScript - Inefficient Code Example</h2>
+      <pre><code class="language-javascript">// Inefficient JavaScript code example
+function findDuplicates(array) {
+  const duplicates = [];
+  
+  // Inefficient nested loop approach
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+      // Skip comparing the same index
+      if (i === j) continue;
+      
+      // Check for duplicate
+      if (array[i] === array[j] && !duplicates.includes(array[i])) {
+        duplicates.push(array[i]);
+      }
+    }
+  }
+  
+  return duplicates;
+}
+
+// Generate a large array for testing
+function generateLargeArray(size) {
+  const result = [];
+  for (let i = 0; i < size; i++) {
+    result.push(Math.floor(Math.random() * 100));
+  }
+  return result;
+}
+
+// Process the array multiple times unnecessarily
+function processData() {
+  const data = generateLargeArray(1000);
+  
+  // Unnecessary multiple iterations
+  let sum = 0;
+  for (let i = 0; i < data.length; i++) {
+    sum += data[i];
+  }
+  
+  let max = -Infinity;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] > max) {
+      max = data[i];
+    }
+  }
+  
+  let min = Infinity;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] < min) {
+      min = data[i];
+    }
+  }
+  
+  // Find duplicates using inefficient function
+  const duplicates = findDuplicates(data);
+  
+  return {
+    sum: sum,
+    max: max,
+    min: min,
+    duplicates: duplicates
+  };
+}
+
+// Call the function repeatedly
+setInterval(processData, 1000);</code></pre>
+    </div>
+
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Python - Inefficient Code Example</h2>
+      <pre><code class="language-python"># Inefficient Python code example
+import time
+import random
+
+def find_duplicates(array):
+    duplicates = []
+    
+    # Inefficient nested loop approach
+    for i in range(len(array)):
+        for j in range(len(array)):
+            # Skip comparing the same index
+            if i == j:
+                continue
+            
+            # Check for duplicate
+            if array[i] == array[j] and array[i] not in duplicates:
+                duplicates.append(array[i])
+    
+    return duplicates
+
+# Generate a large array for testing
+def generate_large_array(size):
+    return [random.randint(0, 100) for _ in range(size)]
+
+# Process the array multiple times unnecessarily
+def process_data():
+    data = generate_large_array(1000)
+    
+    # Unnecessary multiple iterations
+    sum_value = 0
+    for item in data:
+        sum_value += item
+    
+    max_value = float('-inf')
+    for item in data:
+        if item > max_value:
+            max_value = item
+    
+    min_value = float('inf')
+    for item in data:
+        if item < min_value:
+            min_value = item
+    
+    # Find duplicates using inefficient function
+    duplicates = find_duplicates(data)
+    
+    return {
+        'sum': sum_value,
+        'max': max_value,
+        'min': min_value,
+        'duplicates': duplicates
+    }
+
+# Main loop
+while True:
+    result = process_data()
+    time.sleep(1)</code></pre>
+    </div>
+
+    <div class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Java - Inefficient Code Example</h2>
+      <pre><code class="language-java">import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class InefficiencyExample {
+    
+    public static List<Integer> findDuplicates(List<Integer> array) {
+        List<Integer> duplicates = new ArrayList<>();
+        
+        // Inefficient nested loop approach
+        for (int i = 0; i < array.size(); i++) {
+            for (int j = 0; j < array.size(); j++) {
+                // Skip comparing the same index
+                if (i == j) continue;
+                
+                // Check for duplicate
+                if (array.get(i).equals(array.get(j)) && !duplicates.contains(array.get(i))) {
+                    duplicates.add(array.get(i));
+                }
+            }
+        }
+        
+        return duplicates;
+    }
+    
+    // Generate a large array for testing
+    public static List<Integer> generateLargeArray(int size) {
+        List<Integer> result = new ArrayList<>();
+        Random random = new Random();
+        
+        for (int i = 0; i < size; i++) {
+            result.add(random.nextInt(100));
+        }
+        
+        return result;
+    }
+    
+    // Process the array multiple times unnecessarily
+    public static void processData() {
+        List<Integer> data = generateLargeArray(1000);
+        
+        // Unnecessary multiple iterations
+        int sum = 0;
+        for (int i = 0; i < data.size(); i++) {
+            sum += data.get(i);
+        }
+        
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i) > max) {
+                max = data.get(i);
+            }
+        }
+        
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < data.size(); i++) {
+            if (data.get(i) < min) {
+                min = data.get(i);
+            }
+        }
+        
+        // Find duplicates using inefficient function
+        List<Integer> duplicates = findDuplicates(data);
+        
+        // Create a new object for each result
+        Result result = new Result(sum, max, min, duplicates);
+    }
+    
+    public static void main(String[] args) {
+        while (true) {
+            processData();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    static class Result {
+        int sum;
+        int max;
+        int min;
+        List<Integer> duplicates;
+        
+        public Result(int sum, int max, int min, List<Integer> duplicates) {
+            this.sum = sum;
+            this.max = max;
+            this.min = min;
+            this.duplicates = duplicates;
+        }
+    }
+}</code></pre>
+    </div>
+
+    <div class="text-center mt-8">
+      <p class="text-gray-600 mb-4">
+        To use these examples, copy the code and paste it into the Green Code Analyzer extension.
+      </p>
+      <button id="copy-js" class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors mr-2">
+        <i class="fas fa-copy mr-2"></i>Copy JavaScript Example
+      </button>
+      <button id="copy-python" class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors mr-2">
+        <i class="fas fa-copy mr-2"></i>Copy Python Example
+      </button>
+      <button id="copy-java" class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors">
+        <i class="fas fa-copy mr-2"></i>Copy Java Example
+      </button>
+    </div>
+  </div>
+</body>
+</html>

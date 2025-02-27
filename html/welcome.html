@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Green Code Analyzer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    .step-number {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+    
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div class="max-w-4xl mx-auto p-6">
+    <!-- Header -->
+    <header class="text-center mb-12 py-6">
+      <div class="flex justify-center mb-4">
+        <img src="icons/icon128.png" alt="Green Code Analyzer Logo" class="h-24">
+      </div>
+      <h1 class="text-4xl font-bold text-green-600 mb-2">Welcome to Green Code Analyzer</h1>
+      <p class="text-xl text-gray-600">Your AI-powered tool for creating energy-efficient code</p>
+    </header>
+
+    <!-- Introduction -->
+    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">About Green Code Analyzer</h2>
+      <p class="text-gray-700 mb-4">
+        Green Code Analyzer is a Chrome extension that helps developers write more energy-efficient code. 
+        By analyzing your code snippets, it provides recommendations to reduce energy consumption, 
+        lower carbon footprint, and improve overall code efficiency.
+      </p>
+      <p class="text-gray-700">
+        Powered by Google's Gemini AI, this tool offers intelligent insights that can help make your 
+        applications more environmentally friendly while maintaining performance.
+      </p>
+    </section>
+
+    <!-- Features -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Key Features</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-lg shadow-md p-6 feature-card">
+          <div class="text-green-500 text-3xl mb-4">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Efficiency Analysis</h3>
+          <p class="text-gray-600">
+            Get a detailed efficiency score and analysis of your code's energy consumption.
+          </p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-lg shadow-md p-6 feature-card">
+          <div class="text-green-500 text-3xl mb-4">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Smart Recommendations</h3>
+          <p class="text-gray-600">
+            Receive AI-powered suggestions to improve your code's energy efficiency.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-lg shadow-md p-6 feature-card">
+          <div class="text-green-500 text-3xl mb-4">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Carbon Impact</h3>
+          <p class="text-gray-600">
+            Understand the environmental impact of your code and how to reduce it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Getting Started</h2>
+      
+      <!-- Step 1 -->
+      <div class="flex mb-6">
+        <div class="step-number">1</div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Set Up Your API Key <span class="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-medium">REQUIRED</span></h3>
+          <p class="text-gray-700 mb-2">
+            <strong>Important:</strong> Green Code Analyzer requires a Google Gemini API key to function. The extension will not work without a valid API key.
+          </p>
+          <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400 mb-4">
+            <p class="text-yellow-800">
+              <i class="fas fa-exclamation-triangle mr-2"></i>You must enter your own API key. The extension does not provide a default key.
+            </p>
+          </div>
+          <ol class="list-decimal list-inside text-gray-600 ml-4">
+            <li class="mb-1">Click on the extension icon and then click the settings icon</li>
+            <li class="mb-1">Click "Get an API key" to go to Google AI Studio</li>
+            <li class="mb-1">Create a new API key in your Google AI Studio account</li>
+            <li>Paste your API key in the settings page and save</li>
+          </ol>
+          <div class="mt-4 p-4 bg-blue-50 rounded-md text-blue-800 text-sm">
+            <p><i class="fas fa-info-circle mr-1"></i> Your API key is stored locally on your device and is never shared with anyone.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="flex mb-6">
+        <div class="step-number">2</div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Analyze Your Code</h3>
+          <p class="text-gray-700 mb-4">
+            There are two ways to analyze your code:
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 bg-gray-50 rounded-md">
+              <h4 class="font-semibold text-gray-800 mb-2">Method 1: Using the Popup</h4>
+              <ol class="list-decimal list-inside text-gray-600 ml-2">
+                <li class="mb-1">Click on the Green Code Analyzer icon</li>
+                <li class="mb-1">Paste your code in the text area</li>
+                <li class="mb-1">Select the programming language</li>
+                <li>Click "Analyze Code"</li>
+              </ol>
+            </div>
+            
+            <div class="p-4 bg-gray-50 rounded-md">
+              <h4 class="font-semibold text-gray-800 mb-2">Method 2: Using Context Menu</h4>
+              <ol class="list-decimal list-inside text-gray-600 ml-2">
+                <li class="mb-1">Select code on any webpage</li>
+                <li class="mb-1">Right-click on the selected code</li>
+                <li>Choose "Analyze Code for Energy Efficiency"</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 3 -->
+      <div class="flex">
+        <div class="step-number">3</div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Interpret Results</h3>
+          <p class="text-gray-700 mb-2">
+            After analysis, you'll receive:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 ml-4">
+            <li class="mb-1">An efficiency score (0-100)</li>
+            <li class="mb-1">Estimated carbon impact</li>
+            <li class="mb-1">Specific recommendations for improvement</li>
+            <li>Language efficiency comparison</li>
+          </ul>
+          <p class="text-gray-700 mt-2">
+            Use these insights to refactor your code for better energy efficiency!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Pro Tips</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex">
+          <div class="text-green-500 text-xl mr-3">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">Test Your API Key</h3>
+            <p class="text-gray-600">
+              Use the "Test API Key" button in settings to verify your API key is working correctly.
+            </p>
+          </div>
+        </div>
+        
+        <div class="flex">
+          <div class="text-green-500 text-xl mr-3">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">Set Default Language</h3>
+            <p class="text-gray-600">
+              Configure your most-used programming language in settings to save time.
+            </p>
+          </div>
+        </div>
+        
+        <div class="flex">
+          <div class="text-green-500 text-xl mr-3">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">Analyze Small Chunks</h3>
+            <p class="text-gray-600">
+              For best results, analyze specific functions or code blocks rather than entire files.
+            </p>
+          </div>
+        </div>
+        
+        <div class="flex">
+          <div class="text-green-500 text-xl mr-3">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">Check Sample Code</h3>
+            <p class="text-gray-600">
+              Explore our sample inefficient code examples to see how the analyzer works.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6">
+      <p class="text-gray-600 mb-2">
+        Thank you for installing Green Code Analyzer!
+      </p>
+      <div class="flex justify-center space-x-4">
+        <button id="open-options" class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors">
+          <i class="fas fa-cog mr-2"></i>Open Settings
+        </button>
+        <button id="start-analyzing" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
+          <i class="fas fa-code mr-2"></i>Start Analyzing
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="welcome.js"></script>
+</body>
+</html>
