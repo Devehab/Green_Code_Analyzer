@@ -196,6 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "recommendations": ["string", "string", ...],
         "languageComparison": "string"
       }
+      
+      Important: Do not use markdown formatting like ** for bold text in your response.
     `;
 
     const requestBody = {
@@ -292,6 +294,17 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
         
+        // Remove markdown stars from text
+        function removeMarkdownStars(text) {
+          return text.replace(/\*\*/g, '');
+        }
+        
+        // Remove markdown stars from analysis result
+        analysisResult.explanation = removeMarkdownStars(analysisResult.explanation);
+        analysisResult.carbonImpact = removeMarkdownStars(analysisResult.carbonImpact);
+        analysisResult.recommendations = analysisResult.recommendations.map(recommendation => removeMarkdownStars(recommendation));
+        analysisResult.languageComparison = removeMarkdownStars(analysisResult.languageComparison);
+        
         // Validate the analysis result has the expected structure
         if (!analysisResult.score || !analysisResult.recommendations) {
           console.error('Invalid analysis result structure:', analysisResult);
@@ -385,27 +398,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set explanation
     scoreExplanation.textContent = result.explanation || '';
     
-    // Set carbon impact with icon
+    // Function to remove markdown stars from text
+    function removeMarkdownStars(text) {
+      return text.replace(/\*\*/g, '');
+    }
+    
+    // Set carbon impact with icon and remove markdown stars
     carbonImpact.innerHTML = `
       <div class="flex items-start">
-        <div class="flex-1">${result.carbonImpact}</div>
+        <div class="flex-1">${removeMarkdownStars(result.carbonImpact)}</div>
       </div>
     `;
     
-    // Set recommendations with animation
+    // Set recommendations with animation and remove markdown stars
     recommendationsList.innerHTML = '';
     result.recommendations.forEach((recommendation, index) => {
       const li = document.createElement('li');
       li.className = 'fade-in';
       li.style.animationDelay = `${index * 0.1}s`;
-      li.textContent = recommendation;
+      li.textContent = removeMarkdownStars(recommendation);
       recommendationsList.appendChild(li);
     });
     
-    // Set language comparison
+    // Set language comparison and remove markdown stars
     languageComparison.innerHTML = `
       <div class="flex items-start">
-        <div class="flex-1">${result.languageComparison}</div>
+        <div class="flex-1">${removeMarkdownStars(result.languageComparison)}</div>
       </div>
     `;
   }
