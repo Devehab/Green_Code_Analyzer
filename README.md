@@ -53,7 +53,7 @@ Green Code Analyzer is a powerful Chrome extension that leverages Google Gemini 
 #### Manual Installation (Developer Mode)
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Devehab/green-code-analyzer.git
+   git clone https://github.com/Devehab/Green_Code_Analyzer.git
    ```
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" in the top-right corner
